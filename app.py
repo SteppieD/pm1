@@ -119,8 +119,17 @@ def log_time(project_id, task_id):
     return jsonify({'success': True})
 
 if __name__ == '__main__':
+    import sys
+    port = 3000  # Default to port 3000 instead of 5000
+    
+    # Check for port argument
+    if '--port' in sys.argv:
+        port_idx = sys.argv.index('--port')
+        if port_idx + 1 < len(sys.argv):
+            port = int(sys.argv[port_idx + 1])
+    
     ensure_data_structure()
     print("🚀 Project Management Tool starting...")
-    print("📊 Open http://localhost:5000 to view your projects")
+    print(f"📊 Open http://localhost:{port} to view your projects")
     print("💡 Use Claude Code to create projects in the data/ folder")
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True, host='0.0.0.0', port=port)

@@ -11,6 +11,7 @@ class ProjectManager {
     }
 
     async init() {
+        this.initializeTheme();
         await this.loadProjects();
         this.setupEventListeners();
     }
@@ -31,6 +32,34 @@ class ProjectManager {
         document.getElementById('stop-timer').addEventListener('click', () => {
             this.stopTimer();
         });
+
+        document.getElementById('theme-select').addEventListener('change', (e) => {
+            this.changeTheme(e.target.value);
+        });
+    }
+
+    initializeTheme() {
+        // Load saved theme or use default
+        const savedTheme = localStorage.getItem('pm-theme') || 'blue';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        
+        // Set the select value
+        const themeSelect = document.getElementById('theme-select');
+        if (themeSelect) {
+            themeSelect.value = savedTheme;
+        }
+    }
+
+    changeTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('pm-theme', theme);
+        
+        // Re-render gantt chart with new theme if one exists
+        if (this.ganttChart && this.currentProject) {
+            setTimeout(() => {
+                this.renderGanttChart(this.currentProject.tasks);
+            }, 100);
+        }
     }
 
     async loadProjects() {

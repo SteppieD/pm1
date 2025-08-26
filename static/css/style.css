@@ -1,5 +1,125 @@
 /* Project Management Tool Styles */
 
+:root {
+    /* Default Theme (Blue) */
+    --primary-color: #3182ce;
+    --primary-hover: #2c5282;
+    --secondary-color: #38a169;
+    --secondary-hover: #2f855a;
+    --accent-color: #63b3ed;
+    --background-color: #f5f7fa;
+    --card-background: #ffffff;
+    --text-color: #2d3748;
+    --text-muted: #718096;
+    --border-color: #e2e8f0;
+    --success-color: #48bb78;
+    --success-bg: #c6f6d5;
+    --success-text: #22543d;
+    --warning-color: #ed8936;
+    --warning-bg: #fef5e7;
+    --warning-text: #744210;
+    --danger-color: #e53e3e;
+    --danger-hover: #c53030;
+    --info-bg: #bee3f8;
+    --info-text: #2a4365;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+    --primary-color: #4299e1;
+    --primary-hover: #3182ce;
+    --secondary-color: #48bb78;
+    --secondary-hover: #38a169;
+    --accent-color: #90cdf4;
+    --background-color: #1a202c;
+    --card-background: #2d3748;
+    --text-color: #f7fafc;
+    --text-muted: #a0aec0;
+    --border-color: #4a5568;
+    --success-color: #68d391;
+    --success-bg: #22543d;
+    --success-text: #c6f6d5;
+    --warning-color: #fbb040;
+    --warning-bg: #744210;
+    --warning-text: #fef5e7;
+    --danger-color: #f56565;
+    --danger-hover: #e53e3e;
+    --info-bg: #2a4365;
+    --info-text: #bee3f8;
+}
+
+/* Green Theme */
+[data-theme="green"] {
+    --primary-color: #38a169;
+    --primary-hover: #2f855a;
+    --secondary-color: #48bb78;
+    --secondary-hover: #38a169;
+    --accent-color: #68d391;
+    --background-color: #f0fff4;
+    --card-background: #ffffff;
+    --text-color: #1a202c;
+    --text-muted: #4a5568;
+    --border-color: #c6f6d5;
+    --success-color: #48bb78;
+    --success-bg: #c6f6d5;
+    --success-text: #22543d;
+    --warning-color: #ed8936;
+    --warning-bg: #fef5e7;
+    --warning-text: #744210;
+    --danger-color: #e53e3e;
+    --danger-hover: #c53030;
+    --info-bg: #bee3f8;
+    --info-text: #2a4365;
+}
+
+/* Purple Theme */
+[data-theme="purple"] {
+    --primary-color: #805ad5;
+    --primary-hover: #6b46c1;
+    --secondary-color: #9f7aea;
+    --secondary-hover: #805ad5;
+    --accent-color: #b794f6;
+    --background-color: #faf5ff;
+    --card-background: #ffffff;
+    --text-color: #1a202c;
+    --text-muted: #4a5568;
+    --border-color: #e9d8fd;
+    --success-color: #48bb78;
+    --success-bg: #c6f6d5;
+    --success-text: #22543d;
+    --warning-color: #ed8936;
+    --warning-bg: #fef5e7;
+    --warning-text: #744210;
+    --danger-color: #e53e3e;
+    --danger-hover: #c53030;
+    --info-bg: #e9d8fd;
+    --info-text: #553c9a;
+}
+
+/* Orange Theme */
+[data-theme="orange"] {
+    --primary-color: #ed8936;
+    --primary-hover: #dd6b20;
+    --secondary-color: #f6ad55;
+    --secondary-hover: #ed8936;
+    --accent-color: #fbb040;
+    --background-color: #fffaf0;
+    --card-background: #ffffff;
+    --text-color: #1a202c;
+    --text-muted: #4a5568;
+    --border-color: #fed7aa;
+    --success-color: #48bb78;
+    --success-bg: #c6f6d5;
+    --success-text: #22543d;
+    --warning-color: #ed8936;
+    --warning-bg: #fef5e7;
+    --warning-text: #744210;
+    --danger-color: #e53e3e;
+    --danger-hover: #c53030;
+    --info-bg: #fed7aa;
+    --info-text: #9c4221;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -8,9 +128,10 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #f5f7fa;
-    color: #2d3748;
+    background-color: var(--background-color);
+    color: var(--text-color);
     line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -22,7 +143,7 @@ body {
 h1 {
     text-align: center;
     margin-bottom: 30px;
-    color: #2b6cb0;
+    color: var(--primary-color);
     font-size: 2.5em;
 }
 
@@ -31,14 +152,14 @@ h1 {
     gap: 15px;
     margin-bottom: 30px;
     align-items: center;
-    background: white;
+    background: var(--card-background);
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 button {
-    background: #3182ce;
+    background: var(--primary-color);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -49,15 +170,17 @@ button {
 }
 
 button:hover {
-    background: #2c5282;
+    background: var(--primary-hover);
 }
 
 select {
     padding: 10px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--border-color);
     border-radius: 6px;
     font-size: 14px;
     min-width: 200px;
+    background: var(--card-background);
+    color: var(--text-color);
 }
 
 .main-content {
@@ -67,7 +190,7 @@ select {
 }
 
 .chart-section {
-    background: white;
+    background: var(--card-background);
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -75,13 +198,13 @@ select {
 
 .chart-section h2 {
     margin-bottom: 20px;
-    color: #2d3748;
-    border-bottom: 2px solid #e2e8f0;
+    color: var(--text-color);
+    border-bottom: 2px solid var(--border-color);
     padding-bottom: 10px;
 }
 
 .task-panel {
-    background: white;
+    background: var(--card-background);
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -90,8 +213,8 @@ select {
 
 .task-panel h3 {
     margin-bottom: 20px;
-    color: #2d3748;
-    border-bottom: 2px solid #e2e8f0;
+    color: var(--text-color);
+    border-bottom: 2px solid var(--border-color);
     padding-bottom: 10px;
 }
 
@@ -103,8 +226,8 @@ select {
 }
 
 .project-card {
-    background: #f7fafc;
-    border: 1px solid #e2e8f0;
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 20px;
     cursor: pointer;
@@ -118,7 +241,7 @@ select {
 
 .project-card h4 {
     margin-bottom: 10px;
-    color: #2d3748;
+    color: var(--text-color);
 }
 
 .project-status {
@@ -131,18 +254,18 @@ select {
 }
 
 .project-status.active {
-    background: #c6f6d5;
-    color: #22543d;
+    background: var(--success-bg);
+    color: var(--success-text);
 }
 
 .project-status.completed {
-    background: #bee3f8;
-    color: #2a4365;
+    background: var(--info-bg);
+    color: var(--info-text);
 }
 
 .project-status.planning {
-    background: #fef5e7;
-    color: #744210;
+    background: var(--warning-bg);
+    color: var(--warning-text);
 }
 
 /* Task List Styles */
@@ -157,14 +280,15 @@ select {
     justify-content: space-between;
     align-items: center;
     padding: 15px;
-    background: #f7fafc;
+    background: var(--card-background);
     border-radius: 6px;
-    border-left: 4px solid #3182ce;
+    border-left: 4px solid var(--primary-color);
+    border: 1px solid var(--border-color);
 }
 
 .task-item.completed {
     opacity: 0.7;
-    border-left-color: #48bb78;
+    border-left-color: var(--success-color);
 }
 
 .task-checkbox {
@@ -185,7 +309,7 @@ select {
 
 .task-item.completed .task-name {
     text-decoration: line-through;
-    color: #718096;
+    color: var(--text-muted);
 }
 
 .task-controls {
@@ -195,18 +319,18 @@ select {
 }
 
 .timer-btn {
-    background: #38a169;
+    background: var(--secondary-color);
     font-size: 12px;
     padding: 6px 12px;
 }
 
 .timer-btn:hover {
-    background: #2f855a;
+    background: var(--secondary-hover);
 }
 
 .time-spent {
     font-size: 12px;
-    color: #718096;
+    color: var(--text-muted);
     font-weight: bold;
 }
 
@@ -215,8 +339,8 @@ select {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: #2d3748;
-    color: white;
+    background: var(--text-color);
+    color: var(--card-background);
     padding: 15px 20px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
@@ -238,24 +362,24 @@ select {
 #timer-time {
     font-size: 18px;
     font-family: 'Courier New', monospace;
-    color: #63b3ed;
+    color: var(--accent-color);
 }
 
 #stop-timer {
-    background: #e53e3e;
+    background: var(--danger-color);
     padding: 8px 16px;
     font-size: 12px;
 }
 
 #stop-timer:hover {
-    background: #c53030;
+    background: var(--danger-hover);
 }
 
 /* Empty State */
 .empty-state {
     text-align: center;
     padding: 60px 20px;
-    color: #718096;
+    color: var(--text-muted);
 }
 
 .empty-state h3 {
@@ -264,18 +388,36 @@ select {
 }
 
 .empty-state code {
-    background: #f7fafc;
+    background: var(--card-background);
     padding: 10px 15px;
     border-radius: 6px;
     display: inline-block;
     margin-top: 15px;
     font-family: 'Courier New', monospace;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+/* Theme Selector */
+.theme-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.theme-selector label {
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.theme-selector select {
+    min-width: 120px;
 }
 
 /* Gantt Chart Overrides */
 #gantt .gantt-container {
-    background: white;
+    background: var(--card-background);
 }
 
 /* Responsive Design */

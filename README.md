@@ -1,19 +1,103 @@
-# Local Project Management Tool
+# 📊 Local Project Management Tool
 
 A simple braindump-to-project-management tool that works with Claude Code.
 
-## How This Works
+## 🚀 How This Works
 1. **Braindump to Claude**: Paste unstructured project ideas into Claude Code
 2. **Claude Structures It**: Claude reads/writes JSON files in the `data/` folder  
 3. **You Visualize & Track**: Open the HTML tool to see Gantt charts and track time
 
-## For Claude Code Users
+## 💻 Installation & Setup
 
-### Quick Start
+### 🍎 **macOS Setup**
+
+#### Prerequisites
 ```bash
-python app.py
-# Then open http://localhost:5000
+# Check if Python 3 is installed
+python3 --version
+
+# If not installed, install via Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install python
 ```
+
+#### Step-by-Step Installation
+```bash
+# 1. Clone the repository
+git clone https://github.com/SteppieD/pm1.git
+cd pm1
+
+# 2. Create a virtual environment (recommended)
+python3 -m venv venv
+source venv/bin/activate
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. Run the application
+python app.py
+
+# 5. Open your browser and go to:
+# http://localhost:5000
+```
+
+### 🪟 **Windows Setup**
+
+#### Prerequisites
+1. **Install Python 3.8+** from [python.org](https://www.python.org/downloads/)
+   - ✅ Check "Add Python to PATH" during installation
+2. **Install Git** from [git-scm.com](https://git-scm.com/download/win)
+
+#### Step-by-Step Installation
+```cmd
+# 1. Open Command Prompt or PowerShell and clone the repository
+git clone https://github.com/SteppieD/pm1.git
+cd pm1
+
+# 2. Create a virtual environment (recommended)
+python -m venv venv
+venv\Scripts\activate
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. Run the application
+python app.py
+
+# 5. Open your browser and go to:
+# http://localhost:5000
+```
+
+### 🐧 **Linux Setup**
+```bash
+# 1. Install Python 3 and pip (if not already installed)
+sudo apt update
+sudo apt install python3 python3-pip python3-venv git
+
+# 2. Clone the repository
+git clone https://github.com/SteppieD/pm1.git
+cd pm1
+
+# 3. Create a virtual environment
+python3 -m venv venv
+source venv/bin/activate
+
+# 4. Install dependencies
+pip install -r requirements.txt
+
+# 5. Run the application
+python app.py
+
+# 6. Open your browser to: http://localhost:5000
+```
+
+## 🎯 Quick Test
+After setup, you should see:
+- ✅ A sample project with Gantt chart
+- ✅ Clickable tasks with timer functionality  
+- ✅ Time tracking and completion checkboxes
+
+## For Claude Code Users
 
 ### File Structure Claude Should Know About
 ```
