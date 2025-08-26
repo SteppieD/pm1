@@ -1,0 +1,302 @@
+/* Project Management Tool Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f5f7fa;
+    color: #2d3748;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2b6cb0;
+    font-size: 2.5em;
+}
+
+.toolbar {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    align-items: center;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+button {
+    background: #3182ce;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #2c5282;
+}
+
+select {
+    padding: 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 14px;
+    min-width: 200px;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 30px;
+}
+
+.chart-section {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.chart-section h2 {
+    margin-bottom: 20px;
+    color: #2d3748;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+}
+
+.task-panel {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: fit-content;
+}
+
+.task-panel h3 {
+    margin-bottom: 20px;
+    color: #2d3748;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+}
+
+/* Project Overview Cards */
+.projects-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: #f7fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.project-card h4 {
+    margin-bottom: 10px;
+    color: #2d3748;
+}
+
+.project-status {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.project-status.active {
+    background: #c6f6d5;
+    color: #22543d;
+}
+
+.project-status.completed {
+    background: #bee3f8;
+    color: #2a4365;
+}
+
+.project-status.planning {
+    background: #fef5e7;
+    color: #744210;
+}
+
+/* Task List Styles */
+.task-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #f7fafc;
+    border-radius: 6px;
+    border-left: 4px solid #3182ce;
+}
+
+.task-item.completed {
+    opacity: 0.7;
+    border-left-color: #48bb78;
+}
+
+.task-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    flex-grow: 1;
+}
+
+.task-checkbox input {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+.task-name {
+    font-weight: 500;
+}
+
+.task-item.completed .task-name {
+    text-decoration: line-through;
+    color: #718096;
+}
+
+.task-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.timer-btn {
+    background: #38a169;
+    font-size: 12px;
+    padding: 6px 12px;
+}
+
+.timer-btn:hover {
+    background: #2f855a;
+}
+
+.time-spent {
+    font-size: 12px;
+    color: #718096;
+    font-weight: bold;
+}
+
+/* Timer Display */
+.timer {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #2d3748;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-width: 300px;
+}
+
+.timer.hidden {
+    display: none;
+}
+
+#timer-task {
+    font-weight: bold;
+    flex-grow: 1;
+}
+
+#timer-time {
+    font-size: 18px;
+    font-family: 'Courier New', monospace;
+    color: #63b3ed;
+}
+
+#stop-timer {
+    background: #e53e3e;
+    padding: 8px 16px;
+    font-size: 12px;
+}
+
+#stop-timer:hover {
+    background: #c53030;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #718096;
+}
+
+.empty-state h3 {
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.empty-state code {
+    background: #f7fafc;
+    padding: 10px 15px;
+    border-radius: 6px;
+    display: inline-block;
+    margin-top: 15px;
+    font-family: 'Courier New', monospace;
+    border: 1px solid #e2e8f0;
+}
+
+/* Gantt Chart Overrides */
+#gantt .gantt-container {
+    background: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .timer {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        margin-top: 20px;
+    }
+    
+    .projects-overview {
+        grid-template-columns: 1fr;
+    }
+}

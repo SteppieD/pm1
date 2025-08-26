@@ -1,0 +1,10 @@
+{
+  "projects": [
+    {
+      "id": "sample-project",
+      "name": "Sample Website Project",
+      "created": "2025-01-01",
+      "status": "active"
+    }
+  ]
+}

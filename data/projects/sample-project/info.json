@@ -1,0 +1,62 @@
+{
+  "id": "sample-project",
+  "name": "Sample Website Project",
+  "description": "A complete website redesign project to demonstrate the PM tool",
+  "created": "2025-01-01",
+  "tasks": [
+    {
+      "id": "research",
+      "name": "Research & Planning",
+      "start": "2025-01-01",
+      "end": "2025-01-05",
+      "completed": true,
+      "dependencies": [],
+      "timeSpent": 120
+    },
+    {
+      "id": "wireframes",
+      "name": "Create Wireframes",
+      "start": "2025-01-06",
+      "end": "2025-01-12",
+      "completed": false,
+      "dependencies": ["research"],
+      "timeSpent": 45
+    },
+    {
+      "id": "design",
+      "name": "UI/UX Design",
+      "start": "2025-01-13",
+      "end": "2025-01-20",
+      "completed": false,
+      "dependencies": ["wireframes"],
+      "timeSpent": 0
+    },
+    {
+      "id": "development",
+      "name": "Frontend Development",
+      "start": "2025-01-21",
+      "end": "2025-02-05",
+      "completed": false,
+      "dependencies": ["design"],
+      "timeSpent": 0
+    },
+    {
+      "id": "testing",
+      "name": "Testing & QA",
+      "start": "2025-02-06",
+      "end": "2025-02-10",
+      "completed": false,
+      "dependencies": ["development"],
+      "timeSpent": 0
+    },
+    {
+      "id": "launch",
+      "name": "Launch & Deploy",
+      "start": "2025-02-11",
+      "end": "2025-02-12",
+      "completed": false,
+      "dependencies": ["testing"],
+      "timeSpent": 0
+    }
+  ]
+}

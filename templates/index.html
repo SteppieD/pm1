@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management Tool</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/frappe-gantt/dist/frappe-gantt.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/frappe-gantt/dist/frappe-gantt.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Project Dashboard</h1>
+        
+        <div class="toolbar">
+            <button id="refresh-btn">🔄 Refresh Projects</button>
+            <select id="project-select">
+                <option value="">Select Project...</option>
+            </select>
+        </div>
+
+        <div class="main-content">
+            <!-- Gantt Chart Container -->
+            <div class="chart-section">
+                <h2 id="current-project">All Projects Overview</h2>
+                <div id="gantt"></div>
+            </div>
+
+            <!-- Task Panel -->
+            <div class="task-panel">
+                <h3>Quick Actions</h3>
+                <div id="task-list">
+                    <p>Select a project to see tasks</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timer Display -->
+        <div id="timer-display" class="timer hidden">
+            <span id="timer-task">No task running</span>
+            <span id="timer-time">00:00:00</span>
+            <button id="stop-timer">Stop</button>
+        </div>
+    </div>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
